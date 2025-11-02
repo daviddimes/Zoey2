@@ -15,7 +15,8 @@ if not BOT_TOKEN:
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """Handle the /start command."""
-    await update.message.reply_text("Hello, I am the PROD bot!")
+    if update.message:
+        await update.message.reply_text("Hello, I am the PROD bot!")
 
 
 def main() -> None:
