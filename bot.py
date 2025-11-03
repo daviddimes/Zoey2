@@ -7,7 +7,7 @@ from telegram.ext import Application, CommandHandler, ContextTypes
 load_dotenv()
 
 # Get the bot token from environment variable
-BOT_TOKEN = os.getenv('BOT_TOKEN')
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 
 if not BOT_TOKEN:
     raise ValueError("BOT_TOKEN environment variable is not set")
@@ -15,7 +15,7 @@ if not BOT_TOKEN:
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """Handle the /start command."""
-    if update.message:
+    if update and update.message:
         await update.message.reply_text("Hello, I am the PROD bot!")
 
 
